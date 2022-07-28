@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: "Comfortaa";
+  box-sizing: border-box;
+}
+
+.header{
+  height: 100vh;
+  width: 100%;
+  padding: 0 8%;
+  background: url("Header.png");
+  position: relative;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  width:140px;
+}
+
+.links{
+  padding: 28px 0;
+}
+
+.links li{
+  display: inline-block;
+  margin: 0 15px;
+
+}
+
+.links li a{
+  text-decoration: none;
+  color: rgb(38, 12, 12);
+  padding: 5px 0;
+  position: relative;
+}
+
+.links li a::after{
+  content: '';
+  background: #f1b707;
+  width: 0;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.5s;
+}
+
+.links li a:hover::after{
+  width:100%;
+}
+
+.content{
+  position:absolute;
+  left: 50%;
+  top: 15%;
+  width: 90%;
+  max-width: 900px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black;
+}
+
+.content h1{
+  font-size: 56px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.content h2{
+  color: rgb(0, 0, 0);
+  font-size: 32px;
+}
+
+.wrapper{
+  display: grid;
+  margin: 200px 90px auto;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+@media (max-width: 700px) {
+  .wrapper{
+    margin: 200px auto;
+  }
+}
+.wrapper .box{
+  width: 350px;
+  margin: 0 auto;
+  position: relative;
+  perspective: 1000px;
+}
+.wrapper .box .front-face{
+  background: #fff;
+  height: 220px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
+  transition: all 0.5s ease;
+}
+.box .front-face .icon{
+  height: 80px;
+}
+.box .front-face .icon i{
+  font-size: 65px;
+}
+.box .front-face span,
+.box .back-face span{
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .front-face .icon i,
+.box .front-face span{
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.box .back-face{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 220px;
+  width: 100%;
+  padding: 30px;
+  color: #fff;
+  opacity: 0;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  transform: translateY(110px) rotateX(-90deg);
+  box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
+  transition: all 0.5s ease;
+}
+.box .back-face p{
+  margin-top: 10px;
+  text-align: justify;
+}
+.box:hover .back-face{
+  opacity: 1;
+  transform: rotateX(0deg);
+}
+.box:hover .front-face{
+  opacity: 0;
+  transform: translateY(-110px) rotateX(90deg);
+}
+
+.icon{
+  margin-top: 12%;
+  margin-left: 5%;
+}
+
+.texty{
+  margin-left: 25.5%;
+  margin-top: -13%;
+  margin-right: 15%;
+}
